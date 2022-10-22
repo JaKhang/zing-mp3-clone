@@ -1,0 +1,299 @@
+:root {
+    --primary-color: #9b4de0;
+    --secondary-color: #231b2e;
+    --backgroud-color: #170f23;
+    --main-text-color: #fff;
+    --alpha-bachground-color: #3a3344;
+    --alpha-secondary: #231b2ec1;
+    --sub-text-color: #dadada;
+    --alpha-sub-text-color: #dadada1a;
+    --gradian-color-1: #5c4be7;
+    --img-logo-mp3: url(https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg);
+}
+
+/* custom */
+
+
+.vertical-scroll::-webkit-scrollbar {
+    width: 4px;
+    margin-block: 4px;
+
+}
+
+.vertical-scroll:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.vertical-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--alpha-bachground-color);
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+
+
+#zm-main-content {
+    background-color: var(--backgroud-color);
+    min-width: 768px;
+    height: 100vh;
+    display: flex;
+}
+
+/* zing mp3 side bar */
+
+
+.zm-sidebar {
+    background-color: var(--secondary-color);
+    width: 240px;
+    position: relative;
+    display: flex;
+}
+
+
+
+.zm-nav-brand {
+    height: 70px;
+    padding: 0px 28px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.zm-logo-full {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    background: var(--img-logo-mp3) 50%/contain no-repeat;
+}
+
+
+/* navbar */
+.zm-nav-bar {
+    display: flex;
+    flex-flow: column;
+    padding: 70px 0 54px 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--sub-text-color);
+    flex: 1;
+
+}
+
+.zm-main-nav {}
+
+.zm-scroll-nav {
+    flex-basis: 1;
+    overflow: auto;
+}
+
+.zm-scroll-nav::before {
+    content: "";
+    width: 98%;
+    height: 20px;
+    position: absolute;
+    background-color: #5c4be7;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 20%, var(--alpha-secondary) 70%, var(--secondary-color));
+}
+
+
+
+/* nav bar item */
+.zm-nav-item a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 40px;
+    border-left: 2px solid transparent;
+    padding: 8px 26px;
+    color: var(--sub-text-color);
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.zm-nav-item.active a {
+    border-color: var(--primary-color);
+    color: var(--main-text-color);
+    background-color: var(--alpha-bachground-color);
+    width: 100%;
+}
+
+.zm-nav-item span {
+    font-weight: 700;
+}
+
+.zm-nav-item a figure {
+    padding-left: 8px;
+    display: block;
+}
+
+.zm-nav-item i {
+    font-size: 1.6em;
+    min-width: 32px;
+}
+
+.zm-nav-item:hover a {
+    color: var(--main-text-color) !important;
+}
+
+/* nav card item */
+.zm-nav-card-item {
+    margin: 12px 20px;
+    padding: 16px;
+    font-size: 12px;
+    border-radius: 8px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.zm-nav-card-item button {
+    margin-top: 12px;
+    width: 140px;
+
+    padding: 6px;
+    color: inherit;
+    border-radius: 16px;
+    text-transform: uppercase;
+
+}
+
+.zm-nav-card-item.card-login {
+    background-color: var(--primary-color);
+    color: var(--main-text-color);
+}
+
+
+
+.zm-nav-card-item.card-login button {
+    background-color: transparent;
+    border: 1px solid var(--main-text-color);
+}
+
+.zm-nav-card-item.card-vip {
+    background: linear-gradient(135deg, var(--gradian-color-1), var(--primary-color));
+}
+
+.zm-nav-card-item.card-vip button {
+    background-color: #ffdb00;
+    border: 1px solid transparent;
+    color: #170f23;
+}
+
+/* line */
+
+.zm-sidebar-divide::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid var(--alpha-sub-text-color);
+    margin: 16px 25px;
+}
+
+
+/* btn */
+.zm-add-play-list-btn {
+    font: inherit;
+    font-weight: 700;
+    color: var(--main-text-color);
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    border-top-color: var(--alpha-sub-text-color);
+    background-color: var(--secondary-color);
+    height: 54px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0px 28px;
+}
+
+.zm-add-play-list-btn i {
+    font-size: 1.6em;
+    padding-right: 8px;
+
+}
+
+/* header */
+.zm-main-page {
+    position: relative;
+    flex: 1;
+}
+
+.zm-header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 70px;
+    display: flex;
+    padding: 0 58px;
+    align-items: center;
+
+}
+
+
+
+.zm-header-group {
+    display: flex;
+    align-items: center;
+}
+
+.zm-header-search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: var(--alpha-bachground-color);
+    margin-right: 36px;
+    height: 40px;
+    border-radius: 20px;
+    padding-right: 32px;
+}
+
+.zm-header-search button {
+    width: 32px;
+    padding-right: 0;
+    text-align: right;
+    font-size: 20px;
+    color: var(--sub-text-color);
+    margin-right: 4px;
+}
+
+.zm-header-search input {
+    flex: 1;
+    font-size: 0.8125em;
+    color: var(--main-text-color);
+}
+
+.zm-header-search input::placeholder {
+    color: var(--sub-text-color);
+
+}
+
+.zm-header-group {}
+
+.zm-header-btn {
+    width: 40px;
+    height: 40px;
+    background-color: var(--alpha-bachground-color);
+    border-radius: 50%;
+    color: var(--sub-text-color);
+    border: none;
+}
+
+.zm-header-btn+.zm-header-btn {
+    margin-left: 12px;
+}
+
+.zm-header-btn.transparent-bg {
+    padding: 0;
+    width: auto;
+    margin: 0;
+    margin-right: 24px;
+    font-size: 20px;
+
+}
+
+.transparent-bg {
+    background-color: transparent !important;
+    border: none;
+}
