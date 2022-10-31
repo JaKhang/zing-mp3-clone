@@ -20,7 +20,8 @@
 
 <body>
     <div id="root">
-        <main id="zm-main-content">
+        <main class="zm-layout has-player">
+            <!-- side bar -->
             <section class="zm-sidebar">
                 <div class="zm-nav-brand">
                     <a href="">
@@ -110,6 +111,7 @@
 
             </section>
 
+            <!-- main page -->
             <section class="zm-main-page">
                 <header class="zm-header">
                     <div class="zm-header-group">
@@ -124,15 +126,109 @@
                     </form>
 
                     <div class="zm-header-group">
-                        <button class="zm-header-btn"><i class="fa-solid fa-shirt"></i></button>
-                        <button class="zm-header-btn"><i class="fa-brands fa-themeco"></i></button>
-                        <button class="zm-header-btn"><i class="fa-solid fa-gear"></i></button>
-                        <button class="zm-header-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
-                        <button class="zm-header-btn"
+                        <button class="zm-header-btn zm-tooltip-btn">
+                            <div class="tooltip-text--bottom tooltip-text">Chủ đề</div>
+                            <i class="fa-solid fa-shirt"></i>
+                        </button>
+                        <button class="zm-header-btn zm-tooltip-btn">
+                            <div class="tooltip-text--bottom tooltip-text">Nâng vip</div>
+                            <i class="fa-brands fa-themeco"></i>
+                        </button>
+                        <button class="zm-header-btn zm-tooltip-btn">
+                            <div class="tooltip-text--bottom tooltip-text">Cài đặt</div>
+                            <i class="fa-solid fa-gear"></i>
+                        </button>
+                        <button class="zm-header-btn zm-tooltip-btn">
+                            <div class="tooltip-text--bottom tooltip-text">Upload</div>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </button>
+                        <button class="zm-header-btn "
                             style="background-image: url(https://cf.shopee.vn/file/6428b2b11452ffcf8bae65e76a430d54_tn); background-size: contain;"></button>
                     </div>
                 </header>
                 <div class="zm-scroll-body vertical-scroll"></div>
+            </section>
+
+            <!-- player  -->
+            <section class="zm-controls">
+                <div class="zm-controls-container">
+                    <div class="zm-left-controls">
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/2/0/c/8/20c8208e735601981e8d3b85b3d4cacd.jpg"
+                                    alt="">
+                            </div>
+                            <div class="media-center">
+                                <span class="media-title">Họ Yêu Ai Mất Rồi</span>
+                                <span class="madia-subtile">
+                                    <a href="#" class="is-ghost">Doãn Hiếu</a>
+                                </span>
+                            </div>
+                            <div class="media-right">
+                                <button class="hover-cicle transparent-btn zm-controls-btn">
+                                    <i class="fa-regular fa-heart"></i></button>
+                                <button class="hover-cicle transparent-btn zm-controls-btn"><i
+                                        class="fa-solid fa-ellipsis"></i></button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="zm-center-controls">
+                        <div class="zm-controls-item">
+                            <div class="actions">
+                                <button class="transparent-btn zm-controls-btn hover-cicle">
+                                    <i class="fa-solid fa-shuffle"></i>
+                                </button>
+                                <button class="transparent-btn zm-controls-btn hover-cicle">
+                                    <i class="fa-solid fa-backward-step"></i>
+                                </button>
+                                <button class="transparent-btn zm-controls-btn text-40 hover-primary-color">
+                                    <i class="fa-regular fa-circle-play hover-cicle"></i>
+                                </button>
+                                <button class="transparent-btn zm-controls-btn hover-cicle">
+                                    <i class="fa-solid fa-forward-step"></i>
+                                </button>
+                                <button class="transparent-btn zm-controls-btn hover-cicle">
+                                    <i class="fa-solid fa-repeat"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="zm-controls-item">
+                            <span class="time-left time">00:00</span>
+                            <div class="zm-duration-bar">
+                                <div class="sider-bar">
+                                    <div class="zm-sider-handle"></div>
+                                </div>
+                            </div>
+                            <span class="time-right time">05:00</span>
+                        </div>
+                    </div>
+
+                    <div class="zm-right-controls">
+                        <button class="hover-cicle transparent-btn zm-controls-btn">
+                            <i class="fa-solid fa-microphone"></i>
+                        </button>
+                        <button class="hover-cicle transparent-btn zm-controls-btn">
+                            <i class="fa-brands fa-youtube"></i>
+                        </button>
+                        <div class="zm-volume-bar">
+                            <button class="hover-cicle transparent-btn zm-controls-btn">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                            <div class="zm-duration-bar">
+                                <div class="sider-bar">
+                                    <div class="zm-sider-handle"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vertical-cross"></div>
+                        <button class="hover-cicle transparent-btn zm-controls-btn">
+                            <i class="fa-solid fa-list-ul"></i>
+                        </button>
+                    </div>
+                </div>
             </section>
         </main>
     </div>

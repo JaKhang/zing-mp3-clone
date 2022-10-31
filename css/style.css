@@ -1,18 +1,20 @@
 :root {
     --primary-color: #9b4de0;
     --secondary-color: #231b2e;
-    --backgroud-color: #170f23;
-    --main-text-color: #fff;
+    --background-color: #170f23;
+    --text-primary-color: #fff;
     --alpha-bachground-color: #3a3344;
     --alpha-secondary: #231b2ec1;
-    --sub-text-color: #dadada;
+    --text-secondary-color: #dadada;
     --alpha-sub-text-color: #dadada1a;
     --gradian-color-1: #5c4be7;
     --img-logo-mp3: url(https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg);
+    --text-alphal-secondary-color: hsla(0, 0%, 100%, 0.5);
+    --progress-bar-active: var(--text-primary-color);
+    --progress-bar-player: var(--alpha-bachground-color);
 }
 
 /* custom */
-
 
 .vertical-scroll::-webkit-scrollbar {
     width: 4px;
@@ -32,11 +34,19 @@
 
 
 
-#zm-main-content {
-    background-color: var(--backgroud-color);
+.zm-layout {
+    background-color: var(--background-color);
     min-width: 768px;
     height: 100vh;
     display: flex;
+}
+
+.zm-layout.has-player {
+    height: calc(100vh - 90px);
+}
+
+.zm-main-page {
+    height: 100vh;
 }
 
 /* zing mp3 side bar */
@@ -48,7 +58,6 @@
     position: relative;
     display: flex;
 }
-
 
 
 .zm-nav-brand {
@@ -76,7 +85,7 @@
     padding: 70px 0 54px 0;
     font-size: 13px;
     font-weight: 700;
-    color: var(--sub-text-color);
+    color: var(--text-secondary-color);
     flex: 1;
 
 }
@@ -107,14 +116,14 @@
     min-height: 40px;
     border-left: 2px solid transparent;
     padding: 8px 26px;
-    color: var(--sub-text-color);
+    color: var(--text-secondary-color);
     text-decoration: none;
     font-size: 1em;
 }
 
 .zm-nav-item.active a {
     border-color: var(--primary-color);
-    color: var(--main-text-color);
+    color: var(--text-primary-color);
     background-color: var(--alpha-bachground-color);
     width: 100%;
 }
@@ -134,7 +143,7 @@
 }
 
 .zm-nav-item:hover a {
-    color: var(--main-text-color) !important;
+    color: var(--text-primary-color) !important;
 }
 
 /* nav card item */
@@ -160,14 +169,14 @@
 
 .zm-nav-card-item.card-login {
     background-color: var(--primary-color);
-    color: var(--main-text-color);
+    color: var(--text-primary-color);
 }
 
 
 
 .zm-nav-card-item.card-login button {
     background-color: transparent;
-    border: 1px solid var(--main-text-color);
+    border: 1px solid var(--text-primary-color);
 }
 
 .zm-nav-card-item.card-vip {
@@ -194,7 +203,7 @@
 .zm-add-play-list-btn {
     font: inherit;
     font-weight: 700;
-    color: var(--main-text-color);
+    color: var(--text-primary-color);
     display: flex;
     align-items: center;
     border: 1px solid transparent;
@@ -226,9 +235,8 @@
     right: 0;
     height: 70px;
     display: flex;
-    padding: 0 60px;
+    padding: 0 62px;
     align-items: center;
-    justify-content: space-around;
 
 }
 
@@ -243,11 +251,11 @@
     display: flex;
     align-items: center;
     background-color: var(--alpha-bachground-color);
-    margin-right: 20px;
-    width: 540px;
     height: 40px;
     border-radius: 20px;
     padding-right: 32px;
+    margin-right: 36px;
+    min-width: 540px;
 }
 
 .zm-header-search button {
@@ -255,18 +263,18 @@
     padding-right: 0;
     text-align: right;
     font-size: 20px;
-    color: var(--sub-text-color);
+    color: var(--text-secondary-color);
     margin-right: 4px;
 }
 
 .zm-header-search input {
     flex: 1;
-    color: var(--main-text-color);
-    font-size: 15px;
+    color: var(--text-primary-color);
+    font-size: 14px;
 }
 
 .zm-header-search input::placeholder {
-    color: var(--sub-text-color);
+    color: var(--text-secondary-color);
 
 }
 
@@ -277,9 +285,9 @@
     height: 40px;
     background-color: var(--alpha-bachground-color);
     border-radius: 50%;
-    color: var(--sub-text-color);
+    color: var(--text-secondary-color);
     border: none;
-    margin-left: 12px;
+    margin-right: 12px;
 
 }
 
@@ -288,7 +296,7 @@
     padding: 0;
     width: auto;
     margin: 0;
-    margin-right: 26px;
+    margin-right: 24px;
     font-size: 20px;
 
 }
@@ -296,4 +304,168 @@
 .transparent-bg {
     background-color: transparent !important;
     border: none;
+}
+
+/* controll */
+.zm-controls {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.zm-controls-container {
+    padding: 0 20px;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+    border-top: 1px solid var(--alpha-sub-text-color);
+
+}
+
+.zm-left-controls {
+    justify-content: left;
+    width: 30%;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+}
+
+.media {
+    display: flex;
+    align-items: center;
+    font-size: 0.875em;
+
+}
+
+.media-left {
+    margin-right: 12px;
+}
+
+.media-left img {
+    display: block;
+    border-radius: 4px;
+    height: auto;
+    width: 64px;
+}
+
+.media-center {
+    display: flex;
+    flex-flow: column;
+}
+
+.media-title {
+    font-weight: 600;
+    color: var(--text-primary-color);
+    padding-right: 10px;
+}
+
+.madia-subtile {
+    font-size: 0.75rem;
+    color: var(--text-alphal-secondary-color);
+    margin-top: 4px;
+    vertical-align: top;
+}
+
+.media-right {
+    margin-left: 10px;
+}
+
+.zm-controls-item {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+
+}
+
+.zm-controls-btn {
+    color: var(--text-primary-color);
+    min-height: 32px;
+    min-width: 32px;
+}
+
+.actions .zm-controls-btn {
+    margin: 0 8px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+
+}
+
+.zm-center-controls {
+    justify-content: center;
+    flex-flow: column;
+    flex-grow: 1;
+    flex: 1;
+
+}
+
+
+.zm-duration-bar {
+    height: 15px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: 0 8px;
+}
+
+.sider-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--alpha-bachground-color);
+    background: linear-gradient(to right, var(--progress-bar-active) 0%, var(--progress-bar-active) 50%, var(--progress-bar-player) 50%, var(--progress-bar-player) 100%)
+}
+
+.zm-duration-bar:hover .sider-bar {
+    height: 5px;
+}
+
+.zm-duration-bar:hover .zm-sider-handle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--progress-bar-active);
+    margin-left: calc(50% - 6px);
+}
+
+
+.zm-right-controls {
+    display: flex;
+    justify-content: right;
+    width: 30%;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+    font-size: 0.875em;
+}
+
+.vertical-cross {
+    width: 1px;
+    height: 36px;
+    background-color: var(--alpha-bachground-color);
+    margin: 0px 16px;
+}
+
+.zm-volume-bar {
+    width: 108px;
+    display: flex;
+    align-items: center;
+}
+
+.zm-volume-bar .zm-controls-btn {
+    margin: 0px;
+}
+
+.zm-volume-bar .zm-duration-bar {
+    margin: 0px 4px;
 }

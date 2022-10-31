@@ -5,6 +5,8 @@
     font: inherit;
 }
 
+
+
 html {
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
@@ -18,4 +20,87 @@ a:focus {
 
 .hover-opacity-on:hover {
     opacity: 0.7;
+}
+
+.zm-tooltip-btn {
+    position: relative;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 4px;
+    min-width: 64px;
+    font-size: 0.75em;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    z-index: 1;
+}
+
+.zm-tooltip-btn:hover .tooltip-text {
+    visibility: visible;
+}
+
+.tooltip-text--bottom {
+    top: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip-text--bottom::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+}
+
+.is-ghost {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.text-40 {
+    font-size: 40px;
+}
+
+.hover-cicle:hover {
+    border-radius: 100%;
+    background-color: var(--alpha-secondary);
+}
+
+.transparent-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--sub-text-color);
+}
+
+
+.time {
+    font-size: 0.75em;
+    width: 45px;
+    color: var(--text-alphal-secondary-color);
+    text-align: center;
+
+}
+
+.time-left {
+    margin-right: 10px;
+    text-align: right;
+}
+
+.time-right {
+    margin-left: 10px;
+    text-align: left;
+}
+
+.hover-primary-color:hover {
+    color: var(--primary-color) !important;
 }
